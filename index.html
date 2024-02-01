@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+</head>
+<body>
+    <h1>Guess the number</h1>
+    <input id="guessnumber" type="text">
+    <button onclick="check()">Check</button>
+    <p id="result">Your are right/wrong</p>
+    <p id="score">Score 10</p>
+
+    <script>
+        // selecting the required element
+            // variable name                       // id name
+        var guessnumber =document.getElementById("guessnumber") 
+        var result=document.getElementById("result")
+        var score=document.getElementById("score")
+        var randomnumber=Math.floor(Math.random()*10)+1     // to guess random number format
+        var totalscore=10
+        // function call 
+
+        function check()
+        {                                        // enterednumber=randomnumber=guessnumber
+         var enterednumber=guessnumber.value     // enterednumber = is the value we enter
+         if(randomnumber==enterednumber)    // randomnumber = is the value guessed by device
+          { 
+            console.log("Right")
+            result.textContent="Right"
+            alert("yah!!!! You Won")
+         }
+         else
+         {  
+            totalscore=totalscore-1
+            score.textContent="score:"+totalscore 
+            result.textContent="Wrong"
+         }
+        }
+
+    </script>
+</body>
+</html> 
